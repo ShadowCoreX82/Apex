@@ -3,31 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine erste selbstprogrammierte Website</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>Apex Systems - Ihr Digitaler Hub</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
     <header>
-        <h1>Willkommen auf meiner Website!</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="ueber-mich.html">Über mich</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Willkommen bei Apex Systems!</h1>
+            <p>Ihre Quelle für innovative Lösungen.</p>
+        </div>
     </header>
 
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#projekte">Projekte</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <section>
-            <h2>Das ist meine Hauptüberschrift</h2>
-            <p>Hier steht mein erster Absatz Text. Ich lerne gerade HTML, CSS und JavaScript!</p>
-            <img src="placeholder.jpg" alt="Ein Platzhalterbild" width="300">
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h2>Entdecken Sie unsere Welt</h2>
+                <p>Hier finden Sie alles über Apex Systems – von unseren Werten bis zu unseren neuesten Projekten.</p>
+                <img src="bilder/hero-bild.jpg" alt="Ein cooles Hero-Bild für Apex Systems" class="hero-image">
+            </div>
+        </section>
+
+        <section id="ueber-uns" class="content-section">
+            <div class="container">
+                <h2>Über uns</h2>
+                <p>Wir sind Apex Systems, ein Team von Enthusiasten, die sich der Entwicklung von Spitzenlösungen verschrieben haben. Unsere Mission ist es, durch innovative Technologien und kreatives Denken Mehrwert zu schaffen.</p>
+                <div class="image-gallery">
+                    <img src="bilder/team-bild1.jpg" alt="Teammitglied 1" class="gallery-image">
+                    <img src="bilder/team-bild2.jpg" alt="Teammitglied 2" class="gallery-image">
+                    <img src="bilder/produkt-bild.jpg" alt="Unser Produkt" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="projekte" class="content-section">
+            <div class="container">
+                <h2>Unsere Projekte</h2>
+                <p>Hier präsentieren wir einige unserer herausragenden Projekte und Errungenschaften. Jedes Projekt ist ein Beweis für unsere Leidenschaft und unser Engagement für Exzellenz.</p>
+                </div>
+        </section>
+
+        <section id="social-media" class="content-section">
+            <div class="container">
+                <h2>Verbinden Sie sich mit uns!</h2>
+                <p>Bleiben Sie auf dem Laufenden und treten Sie unserer Community bei:</p>
+                <div class="social-links">
+                    <a href="IHR_DISCORD_EINLADUNGS_LINK" target="_blank" class="social-button discord">
+                        <i class="fab fa-discord"></i> Discord Server
+                    </a>
+                    <a href="IHR_TIKTOK_PROFIL_LINK" target="_blank" class="social-button tiktok">
+                        <i class="fab fa-tiktok"></i> TikTok Profil
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Meine Website. Alle Rechte vorbehalten.</p>
+        <div class="container">
+            <p>&copy; 2025 Apex Systems. Alle Rechte vorbehalten.</p>
+            <p>
+                <a href="#top">Nach oben</a>
+            </p>
+        </div>
     </footer>
 
-    <script src="script.js"></script> </body>
+    <script src="script.js"></script>
+</body>
 </html>

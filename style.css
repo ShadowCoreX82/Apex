@@ -1,55 +1,249 @@
+/* Allgemeine Einstellungen */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Eine häufig verwendete Schriftart */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background-color: #2c2f33; /* Dunkler Hintergrund, ähnlich Discord */
+    color: #ffffff; /* Heller Text */
+    display: flex; /* Für Footer am unteren Rand */
+    flex-direction: column; /* Für Footer am unteren Rand */
+    min-height: 100vh; /* Mindesthöhe des Viewports */
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header-Bereich */
 header {
-    background: #333;
-    color: #fff;
+    background-color: #23272a; /* Noch dunkler, für den oberen Bereich */
+    color: #ffffff;
     padding: 1rem 0;
     text-align: center;
+    border-bottom: 1px solid #7289da; /* Discord-Blau als Trennlinie */
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.5em;
+    color: #7289da; /* Discord-Blau für die Hauptüberschrift */
+}
+
+header p {
+    font-size: 1.1em;
+    color: #b9bbbe; /* Hellerer Grauton für Untertitel */
+}
+
+/* Navigationsleiste */
+nav {
+    background-color: #23272a; /* Wie Header */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 nav ul {
-    padding: 0;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block; /* Elemente nebeneinander */
+    margin: 0 15px;
 }
 
 nav a {
-    color: #fff;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #7289da; /* Discord-Blau beim Hover */
+    background-color: rgba(114, 137, 218, 0.1); /* Leichter blauer Hintergrund */
+    border-radius: 5px;
+}
+
+/* Hauptinhaltsbereich */
+main {
+    flex-grow: 1; /* Nimmt den restlichen Platz ein, um Footer unten zu halten */
+    padding-top: 20px; /* Abstand zum Nav-Menü */
+}
+
+.content-section {
+    background-color: #36393f; /* Etwas hellerer Dunkelton für Inhaltsbereiche */
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.content-section h2 {
+    color: #7289da; /* Discord-Blau für Sektionsüberschriften */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #7289da;
+    padding-bottom: 10px;
+    display: inline-block; /* Damit die Linie nur unter dem Text ist */
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.content-section p {
+    color: #dcddde; /* Heller Grauton für Absätze */
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Hero-Sektion (optional, für ein großes Startbild) */
+.hero-section {
+    background-color: #23272a; /* Dunkler als andere Sektionen */
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.hero-section h2 {
+    color: #ffffff;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    color: #b9bbbe;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
+/* Bildergalerie */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Bilder brechen in neue Zeile um */
+    gap: 20px; /* Abstand zwischen den Bildern */
+    justify-content: center; /* Bilder zentrieren */
+    margin-top: 30px;
+}
+
+.gallery-image {
+    width: 100%; /* Standard für kleine Bildschirme */
+    max-width: 300px; /* Maximale Breite für jedes Bild */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05); /* Zoom-Effekt beim Hover */
+}
+
+/* Social Media Buttons */
+.social-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-button {
+    display: inline-block;
+    background-color: #7289da; /* Discord-Blau als Standard */
+    color: #ffffff;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.social-button i {
+    margin-right: 10px;
+}
+
+.social-button:hover {
+    background-color: #677bc4; /* Dunkleres Blau beim Hover */
+    transform: translateY(-2px); /* Leichter "Pop"-Effekt */
+}
+
+.social-button.discord {
+    background-color: #7289da; /* Discord-Blau */
+}
+
+.social-button.discord:hover {
+    background-color: #677bc4;
+}
+
+.social-button.tiktok {
+    background-color: #ee1d52; /* TikTok-Rot */
+}
+
+.social-button.tiktok:hover {
+    background-color: #d11a48;
+}
+
+
+/* Footer-Bereich */
+footer {
+    background-color: #23272a; /* Wie Header und Nav */
+    color: #b9bbbe;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Schiebt den Footer nach unten */
+    border-top: 1px solid #7289da;
+}
+
+footer a {
+    color: #7289da;
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
+footer a:hover {
+    text-decoration: underline;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+/* Responsive Design für kleinere Bildschirme */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
 
-img {
-    max-width: 100%; /* Bilder passen sich der Breite an */
-    height: auto;
-    display: block; /* Entfernt zusätzlichen Platz unter dem Bild */
-    margin-top: 20px;
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        display: block; /* Links untereinander auf kleinen Bildschirmen */
+        margin: 10px 0;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .gallery-image {
+        max-width: 90%; /* Bilder nehmen mehr Platz ein */
+    }
 }
