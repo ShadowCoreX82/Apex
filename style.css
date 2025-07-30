@@ -72,7 +72,7 @@ header .logo {
 }
 
 header .logo img { /* NEU: Styling für das Logo-Bild */
-    height: 50px; /* Beispielgröße für dein Logo (anpassen!) */
+    height: 40px; /* Beispielgröße für dein Logo (anpassen!) */
     width: auto; /* Breite proportional anpassen */
     margin-right: 15px; /* Abstand zwischen Logo und Text/Name */
     vertical-align: middle; /* Vertikale Ausrichtung */
