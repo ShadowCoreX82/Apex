@@ -1,128 +1,195 @@
 /* Allgemeine Einstellungen */
 body {
-    font-family: 'Arial', sans-serif; /* Eine häufig verwendete Schriftart */
+    font-family: 'Open Sans', sans-serif; /* Für den Haupttext */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #2c2f33; /* Dunkler Hintergrund, ähnlich Discord */
-    color: #ffffff; /* Heller Text */
-    display: flex; /* Für Footer am unteren Rand */
-    flex-direction: column; /* Für Footer am unteren Rand */
-    min-height: 100vh; /* Mindesthöhe des Viewports */
+    background-color: #1a1e23; /* Dunklerer, satterer Hintergrund */
+    color: #e0e6ec; /* Hellerer, weicherer Text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1300px; /* Container etwas breiter */
     margin: 0 auto;
     padding: 20px 0;
 }
 
 /* Header-Bereich */
 header {
-    background-color: #23272a; /* Noch dunkler, für den oberen Bereich */
-    color: #ffffff;
-    padding: 1rem 0;
-    text-align: center;
-    border-bottom: 1px solid #7289da; /* Discord-Blau als Trennlinie */
+    background-color: #1e2228; /* Noch dunkler für den Header */
+    padding: 1.5rem 0; /* Mehr Padding */
+    border-bottom: none; /* Keine harte Linie mehr */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* Tieferer Schatten */
+    position: sticky; /* Header bleibt sichtbar beim Scrollen */
+    top: 0;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen liegt */
+}
+
+header h1, .hero-section h2, .content-section h2, .team-intro-text, .contact-methods h3 {
+    font-family: 'Montserrat', sans-serif; /* Für Überschriften */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #7289da; /* Discord-Blau für die Hauptüberschrift */
+    font-size: 2.8em; /* Größere Überschrift */
+    color: #8bbffc; /* Helles, leuchtendes Blau als Akzent */
+    text-shadow: 0 0 10px rgba(139, 191, 252, 0.5); /* Leuchtender Effekt */
 }
 
 header p {
-    font-size: 1.1em;
-    color: #b9bbbe; /* Hellerer Grauton für Untertitel */
+    color: #aebacd; /* Weicherer Grauton */
 }
 
 /* Navigationsleiste */
 nav {
-    background-color: #23272a; /* Wie Header */
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: transparent; /* Navigation transparent im Header */
+    box-shadow: none;
+    padding: 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex; /* Flexbox für bessere Ausrichtung */
+    justify-content: center; /* Links zentrieren */
+    align-items: center;
+    margin-top: 10px;
 }
 
 nav ul li {
     display: inline-block; /* Elemente nebeneinander */
-    margin: 0 15px;
+    margin: 0 20px; /* Mehr Abstand zwischen Links */
 }
 
 nav a {
-    color: #ffffff;
+    color: #c9d2de; /* Hellerer Standard-Link */
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 8px 15px; /* Mehr Padding */
     transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative; /* Für Unterstrich-Animation */
+    overflow: hidden;
 }
 
-nav a:hover, nav a:focus {
-    color: #7289da; /* Discord-Blau beim Hover */
-    background-color: rgba(114, 137, 218, 0.1); /* Leichter blauer Hintergrund */
+nav a:hover, nav a:focus, nav a.active {
+    color: #8bbffc; /* Leuchtendes Blau beim Hover/Active */
+    background-color: rgba(139, 191, 252, 0.1); /* Subtiler Hintergrund */
     border-radius: 5px;
 }
+nav a::after { /* Animierter Unterstrich */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8bbffc;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+nav a:hover::after, nav a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 
 /* Hauptinhaltsbereich */
 main {
     flex-grow: 1; /* Nimmt den restlichen Platz ein, um Footer unten zu halten */
     padding-top: 20px; /* Abstand zum Nav-Menü */
+    padding: 40px 0; /* Mehr vertikaler Abstand */
 }
 
 .content-section {
-    background-color: #36393f; /* Etwas hellerer Dunkelton für Inhaltsbereiche */
-    margin-bottom: 20px;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    background-color: #272c33; /* Etwas dunklerer Hintergrund für Sektionen */
+    margin-bottom: 30px; /* Mehr Abstand zwischen Sektionen */
+    padding: 40px; /* Mehr Padding */
+    border-radius: 12px; /* Rundere Ecken */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Tieferer, weicherer Schatten */
+    border: 1px solid rgba(139, 191, 252, 0.1); /* Leichter blauer Rand */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-section:hover {
+    transform: translateY(-5px); /* Leichter Hover-Effekt */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
 }
 
+
 .content-section h2 {
-    color: #7289da; /* Discord-Blau für Sektionsüberschriften */
+    color: #8bbffc; /* Leuchtendes Blau */
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
-    border-bottom: 2px solid #7289da;
-    padding-bottom: 10px;
-    display: inline-block; /* Damit die Linie nur unter dem Text ist */
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Größer */
+    border-bottom: 3px solid #8bbffc; /* Dickere, leuchtende Linie */
+    padding-bottom: 15px;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+    position: relative; /* Für Pseudoelement */
+}
+.content-section h2::after { /* Subtiler Leuchteffekt unter der Überschrift */
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 8px;
+    background: radial-gradient(ellipse at center, rgba(139, 191, 252, 0.3) 0%, transparent 70%);
+    z-index: -1;
 }
 
 .content-section p {
-    color: #dcddde; /* Heller Grauton für Absätze */
+    color: #c9d2de; /* Passender Grauton */
     text-align: center;
     margin-bottom: 25px;
+    font-size: 1.1em;
+    line-height: 1.8;
 }
 
 /* Hero-Sektion (optional, für ein großes Startbild) */
 .hero-section {
-    background-color: #23272a; /* Dunkler als andere Sektionen */
-    padding: 50px 0;
+    background: linear-gradient(135deg, #1e2228, #111418); /* Leichter Farbverlauf */
+    padding: 80px 0; /* Mehr Padding */
     text-align: center;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    position: relative; /* Für Bildpositionierung */
+    overflow: hidden; /* Sicherstellen, dass nichts überläuft */
 }
 
 .hero-section h2 {
+    font-size: 3.5em; /* Größer */
     color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.7);
+    margin-bottom: 15px;
 }
 
 .hero-section p {
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: #b9bbbe;
     margin-bottom: 30px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.home-content { /* Neue Klasse für den Textbereich im Hero */
+    z-index: 1; /* Text über Bild */
+    position: relative;
+}
+
+.home-img { /* Bild im Hero */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%; /* Größe des Bildes anpassen */
+    opacity: 0.3; /* Halbtransparent */
+    z-index: 0; /* Hinter dem Text */
+    pointer-events: none; /* Klicks durchlassen */
 }
 
 .hero-image {
@@ -131,57 +198,271 @@ main {
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     margin-top: 20px;
+    width: 100%;
+    object-fit: contain; /* Bild anpassen, ohne zu verzerren */
+    border-radius: 0; /* Keine Ränder, wenn es Hintergrund ist */
+    box-shadow: none;
+    margin-top: 0;
 }
 
-/* Bildergalerie */
+/* Buttons (btn-box) */
+.btn-box {
+    margin-top: 40px;
+    display: flex; /* Buttons nebeneinander */
+    justify-content: center;
+    gap: 20px; /* Abstand zwischen Buttons */
+}
+
+.btn-box a {
+    display: inline-block;
+    background: linear-gradient(45deg, #8bbffc, #7289da); /* Farbverlauf */
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    border: 1px solid #8bbffc;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-box a::before { /* Hover-Effekt für Buttons */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn-box a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.btn-box a:hover::before {
+    left: 0;
+}
+
+/* Features Sektion */
+.features .box-container {
+    display: grid; /* Grid-Layout für Features */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min Breite, flexibel */
+    gap: 30px; /* Größerer Abstand */
+    margin-top: 40px;
+}
+
+.features .box {
+    background-color: #2e343b; /* Etwas hellerer Hintergrund */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(139, 191, 252, 0.15);
+}
+
+.features .box:hover {
+    transform: translateY(-8px); /* Stärkerer Pop-Effekt */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    background-color: #36393f; /* Leicht dunkler beim Hover */
+}
+
+.features .box i {
+    font-size: 3.5em; /* Größere Icons */
+    color: #8bbffc;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(139, 191, 252, 0.5);
+}
+
+.features .box h3 {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.features .box p {
+    color: #c9d2de;
+    font-size: 1em;
+}
+
+/* Team Sektion */
+.team-intro-text {
+    text-align: center;
+    font-size: 1.2em;
+    color: #c9d2de;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .image-gallery {
     display: flex;
-    flex-wrap: wrap; /* Bilder brechen in neue Zeile um */
-    gap: 20px; /* Abstand zwischen den Bildern */
-    justify-content: center; /* Bilder zentrieren */
-    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 40px; /* Größerer Abstand */
+    justify-content: center;
+    margin-top: 40px;
 }
 
-.gallery-image {
-    width: 100%; /* Standard für kleine Bildschirme */
-    max-width: 300px; /* Maximale Breite für jedes Bild */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+.gallery-item {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 280px; /* Etwas größere Bilder */
     transition: transform 0.3s ease;
 }
 
-.gallery-image:hover {
-    transform: scale(1.05); /* Zoom-Effekt beim Hover */
+.gallery-item:hover {
+    transform: translateY(-10px); /* Starker Pop-Effekt */
 }
 
-/* Social Media Buttons */
-.social-links {
+.gallery-image {
+    width: 100%;
+    height: 280px; /* Feste Höhe für einheitliche Größe */
+    object-fit: cover; /* Bilder füllen den Bereich aus */
+    border-radius: 50%; /* Rund statt eckig für Profilbilder */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    border: 4px solid #8bbffc; /* Heller blauer Rand */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    border-color: #ffffff; /* Randfarbe ändern beim Hover */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7), 0 0 20px rgba(139, 191, 252, 0.8); /* Stark leuchtender Schatten */
+}
+
+.gallery-name {
+    display: block;
+    margin-top: 15px;
+    color: #8bbffc;
+    font-size: 1.5em; /* Größerer Name */
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.gallery-name:hover {
+    color: #ffffff;
+}
+
+/* Kontakt Sektion */
+.kontakt .content-section p { /* Spezifisches Styling für p in Kontakt Sektion */
+    margin-bottom: 40px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-box {
+    background-color: #2e343b;
+    padding: 35px;
+    border-radius: 10px;
     text-align: center;
-    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    flex: 1 1 350px; /* Flexibel mit einer Basisbreite */
+    max-width: 450px;
+    border: 1px solid rgba(139, 191, 252, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.contact-box i {
+    font-size: 4em; /* Größer */
+    color: #8bbffc;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(139, 191, 252, 0.5);
+}
+
+.contact-box h3 {
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: #c9d2de;
+    margin-bottom: 25px;
+}
+
+.contact-box .btn { /* Buttons in der Kontaktsektion */
+    background: linear-gradient(45deg, #8bbffc, #7289da);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+.contact-box .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Social Media Buttons (im Header und Footer) */
+.social-media { /* Für den Header-Bereich */
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #8bbffc;
+    font-size: 2em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.social-links { /* Die Buttons in der Social-Sektion, falls vorhanden */
+    margin-top: 50px; /* Mehr Abstand */
 }
 
 .social-button {
     display: inline-block;
     background-color: #7289da; /* Discord-Blau als Standard */
     color: #ffffff;
-    padding: 12px 25px;
-    margin: 10px;
-    border-radius: 5px;
+    padding: 14px 30px; /* Größer */
+    margin: 0 15px; /* Abstand anpassen */
+    border-radius: 8px; /* Etwas runder */
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .social-button i {
     margin-right: 10px;
+    font-size: 1.5em; /* Icongröße anpassen */
 }
 
 .social-button:hover {
     background-color: #677bc4; /* Dunkleres Blau beim Hover */
-    transform: translateY(-2px); /* Leichter "Pop"-Effekt */
+    transform: translateY(-4px); /* Stärkerer Pop-Effekt */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
 .social-button.discord {
@@ -203,16 +484,18 @@ main {
 
 /* Footer-Bereich */
 footer {
-    background-color: #23272a; /* Wie Header und Nav */
-    color: #b9bbbe;
+    background-color: #1e2228; /* Wie Header und Nav */
+    color: #aebacd;
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0; /* Mehr Padding */
     margin-top: auto; /* Schiebt den Footer nach unten */
-    border-top: 1px solid #7289da;
+    border-top: 1px solid rgba(139, 191, 252, 0.1);
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.4);
+    position: relative;
 }
 
 footer a {
-    color: #7289da;
+    color: #8bbffc;
     text-decoration: none;
 }
 
@@ -220,30 +503,137 @@ footer a:hover {
     text-decoration: underline;
 }
 
+.footer-iconTop {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #8bbffc;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(139, 191, 252, 0.5);
+}
+
+.footer-iconTop:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+.footer-iconTop i {
+    font-size: 2em;
+    color: #1a1e23; /* Dunkle Farbe für das Icon */
+}
+
+/* Kleine Anpassung am Logo/Navbar im HTML, damit es sauberer im Header steht */
+header .logo {
+    color: #8bbffc;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px; /* Abstand zur Navi */
+    display: block; /* Damit es eine eigene Zeile einnimmt */
+}
+
+header .navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Navigation bricht um, wenn zu lang */
+}
+
+
 /* Responsive Design für kleinere Bildschirme */
+@media (max-width: 992px) {
+    .hero-section h2 {
+        font-size: 3em;
+    }
+    .hero-section p {
+        font-size: 1.2em;
+    }
+    .features .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .social-media {
+        position: static; /* Zurücksetzen für kleinere Bildschirme */
+        transform: none;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    header .logo { /* Logo im Header auch zentrieren, wenn Social Media oben ist */
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
-
+    nav ul li {
+        margin: 0 10px;
+    }
+    nav a {
+        padding: 5px 8px;
+    }
+    .hero-section {
+        padding: 60px 0;
+    }
     .hero-section h2 {
         font-size: 2.5em;
     }
-
     .hero-section p {
         font-size: 1em;
     }
-
-    nav ul li {
-        display: block; /* Links untereinander auf kleinen Bildschirmen */
-        margin: 10px 0;
+    .btn-box {
+        flex-direction: column; /* Buttons untereinander */
+        gap: 15px;
     }
-
     .content-section {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+    .content-section h2 {
+        font-size: 2em;
+    }
+    .gallery-image {
+        max-width: 250px;
+        height: 250px;
+    }
+    .contact-box {
+        flex: 1 1 100%; /* Kontaktboxen untereinander */
+        max-width: 90%;
+    }
+    .footer-iconTop {
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    .hero-section h2 {
+        font-size: 2em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    .features .box, .contact-box {
         padding: 20px;
     }
-
-    .gallery-image {
-        max-width: 90%; /* Bilder nehmen mehr Platz ein */
+    .features .box i {
+        font-size: 3em;
+    }
+    .features .box h3 {
+        font-size: 1.5em;
+    }
+    .social-button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 0 8px;
     }
 }
