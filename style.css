@@ -70,7 +70,7 @@ header .logo {
     align-items: center;
     margin-bottom: 0; /* Entfernt Standard-Margins */
     
-    /* NEUE REGELN FÜR ZENTRIERUNG */
+    /* REGELN FÜR ZENTRIERUNG DES LOGOS IM HEADER */
     flex-grow: 1; /* Lässt das Logo den verfügbaren Platz im Zentrum ausfüllen */
     justify-content: center; /* Zentriert den Text innerhalb des Logo-Elements */
     order: 2; /* Setzt das Logo an die zweite Position (visuell mittig) */
@@ -173,7 +173,23 @@ main {
     border-radius: 2px;
 }
 
-.content-section p {
+/* Anpassungen für den "Über Uns" Inhalt */
+.about-content {
+    padding: 0 50px; /* Padding links und rechts, um Abstand zum Rand zu halten */
+    max-width: 1000px; /* Maximale Breite für bessere Lesbarkeit */
+    margin-left: auto; /* Zentriert den Block horizontal */
+    margin-right: auto; /* Zentriert den Block horizontal */
+}
+
+.about-content h3 { /* NEUE REGEL: Zentriert den h3-Text */
+    text-align: center;
+    font-family: 'Orbitron', sans-serif; /* Passend zum Logo/Headings */
+    color: var(--light-text);
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.content-section p { /* Diese Regel sollte schon text-align: center haben */
     color: var(--soft-text);
     text-align: center;
     margin-bottom: 25px;
@@ -650,7 +666,7 @@ footer {
         font-size: 1.8em;
     }
     header .logo img { /* NEU: Logo-Größe für sehr kleine Bildschirme */
-        height: 35px; /* Du wolltest hier 30px, ich belasse es bei 35px vom letzten Code. Wenn du 30px möchtest, ändere es hier auf 30px */
+        height: 35px;
         margin-right: 8px;
     }
     .navbar a {
