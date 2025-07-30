@@ -3,83 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Systems - Ihr Digitaler Hub</title>
-    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Ihr Server Name - Startseite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="bilder/favicon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Willkommen bei Apex Systems!</h1>
-            <p>Ihre Quelle für innovative Lösungen.</p>
-        </div>
+        <a href="#" class="logo">Ihr Logo / Name</a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">Über Uns</a>
+            <a href="#features">Features</a>
+            <a href="#team">Team</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+        <div class="social-media">
+            <a href="https://discord.gg/IhrDiscordInvite" target="_blank"><i class='bx bxl-discord'></i></a>
+            </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="#ueber-uns">Über uns</a></li>
-                <li><a href="#projekte">Projekte</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Willkommen auf [Ihr Server Name]</h1>
+            <h3>Ihre Überschrift hier!</h3>
+            <p>Ein kurzer, ansprechender Text über Ihren Server, was ihn besonders macht und warum die Leute beitreten sollten. Gehen Sie auf die Kernwerte und das Spielerlebnis ein.</p>
+            <div class="btn-box">
+                <a href="#features">Mehr Erfahren</a>
+                <a href="https://discord.gg/IhrDiscordInvite" target="_blank">Discord Joinen</a>
+            </div>
         </div>
-    </nav>
+        <div class="home-img">
+            <img src="bilder/home-banner.png" alt="Server-Szene">
+        </div>
+    </section>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <h2>Entdecken Sie unsere Welt</h2>
-                <p>Wir optimieren Discordserver mit spezialisierten Bots für Ticket-, Verifizierungs-, Logging- und Boost-Systeme sowie weiteren Lösungen besuchen Sie unseren Discord für fragen.</p>
-                <img src="logo_klein.png" alt="Ein cooles Hero-Bild für Apex Systems" class="hero-image">
+    <section class="about" id="about">
+        <h2 class="heading">Über <span>Uns</span></h2>
+        <div class="about-content">
+            <h3>Unsere Vision für Ihren FiveM-Server</h3>
+            <p>Hier können Sie detaillierter beschreiben, was Ihren Server ausmacht. Gehen Sie auf die Art des Roleplays, die Community, die Werte, die Sie fördern, und die langfristigen Ziele ein. Warum sollte sich jemand für genau Ihren Server entscheiden?</p>
+            <p>Beschreiben Sie die Einzigartigkeit Ihrer Features und wie Sie das Spielerlebnis kontinuierlich verbessern.</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 class="heading">Unsere <span>Features</span></h2>
+        <div class="box-container">
+            <div class="box">
+                <i class='bx bxs-car'></i>
+                <h3>Angepasste Fahrzeuge</h3>
+                <p>Eine breite Auswahl an einzigartigen, optimierten Fahrzeugen für jedes Roleplay-Szenario.</p>
+            </div>
+            <div class="box">
+                <i class='bx bxs-building-house'></i>
+                <h3>Dynamisches Housing</h3>
+                <p>Erwerbe und gestalte dein eigenes Zuhause mit interaktiven Elementen.</p>
+            </div>
+            <div class="box">
+                <i class='bx bxs-dollar-circle'></i>
+                <h3>Wirtschaftssystem</h3>
+                <p>Ein realistisches und faires Wirtschaftssystem mit vielfältigen Job-Möglichkeiten.</p>
+            </div>
+            <div class="box">
+                <i class='bx bxs-group'></i>
+                <h3>Aktive Community</h3>
+                <p>Tritt einer freundlichen und unterstützenden Community bei, die täglich wächst.</p>
+            </div>
+            <div class="box">
+                <i class='bx bxs-wrench'></i>
+                <h3>Ständige Updates</h3>
+                <p>Regelmäßige Updates und neue Inhalte, um das Spiel frisch und spannend zu halten.</p>
+            </div>
+            <div class="box">
+                <i class='bx bxs-shield'></i>
+                <h3>Erfahrenes Team</h3>
+                <p>Unser engagiertes Team sorgt für ein faires und angenehmes Spielerlebnis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <h2 class="heading">Unser <span>Team</span></h2>
+        <p class="team-intro-text">Lerne die engagierten Köpfe hinter unserem Server kennen, die täglich daran arbeiten, dir das beste Erlebnis zu bieten.</p>
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="bilder/DC Ränge/leitung.png" alt="Shadow" class="gallery-image">
+                <a href="#kontakt" class="gallery-name">Shadow</a>
+            </div>
+            <div class="gallery-item">
+                <img src="bilder/DC Ränge/stv_leitung.png" alt="Deniz" class="gallery-image">
+                <a href="#kontakt" class="gallery-name">Deniz</a>
+            </div>
+            </div>
+    </section>
+
+    <section class="kontakt" id="kontakt">
+        <h2 class="heading">Kontaktiere <span>Uns</span></h2>
+        <p>Haben Sie Fragen, Feedback oder möchten Sie uns einfach hallo sagen? Nutzen Sie die folgenden Wege, um mit uns in Kontakt zu treten.</p>
+        <div class="contact-methods">
+            <div class="contact-box">
+                <i class='bx bxl-discord'></i>
+                <h3>Discord</h3>
+                <p>Der beste Weg, uns zu erreichen ist über unseren Discord-Server.</p>
+                <a href="https://discord.gg/IhrDiscordInvite" target="_blank" class="btn">Jetzt beitreten</a>
+            </div>
+            <div class="contact-box">
+                <i class='bx bx-envelope'></i>
+                <h3>E-Mail</h3>
+                <p>Senden Sie uns eine E-Mail für geschäftliche Anfragen oder längere Anliegen.</p>
+                <a href="mailto:Ihre@Email.de" class="btn">E-Mail senden</a>
+            </div>
             </div>
         </section>
 
-        <section id="ueber-uns" class="content-section">
-            <div class="container">
-                <h2>Über uns</h2>
-                <p>Wir sind Apex Systems, ein Team von Enthusiasten, die sich der Entwicklung von Spitzenlösungen verschrieben haben. Unsere Mission ist es, durch innovative Technologien und kreatives Denken Mehrwert zu schaffen.</p>
-                <div class="image-gallery">
-                    <img src="bilder/team-bild1.jpg" alt="Teammitglied 1" class="gallery-image">
-                    <img src="bilder/team-bild2.jpg" alt="Teammitglied 2" class="gallery-image">
-                    <img src="bilder/produkt-bild.jpg" alt="Unser Produkt" class="gallery-image">
-                </div>
-            </div>
-        </section>
-
-        <section id="projekte" class="content-section">
-            <div class="container">
-                <h2>Unsere Projekte</h2>
-                <p>Hier präsentieren wir einige unserer herausragenden Projekte und Errungenschaften. Jedes Projekt ist ein Beweis für unsere Leidenschaft und unser Engagement für Exzellenz.</p>
-                </div>
-        </section>
-
-        <section id="social-media" class="content-section">
-            <div class="container">
-                <h2>Verbinden Sie sich mit uns!</h2>
-                <p>Bleiben Sie auf dem Laufenden und treten Sie unserer Community bei:</p>
-              <div class="social-links">
-                  <a href="https://discord.gg/9nKZzgF8aj" target="_blank" class="social-button discord-server">
-                      <i class="fab fa-discord"></i> Discord Server
-                  </a>
-
-                  <a href="https://discordapp.com/users/1289670295464185938" target="_blank" class="social-button discord-profile">
-                      <i class="fab fa-discord"></i> Shadow´s Profil 
-                  </a>
-
-                  <a href="https://www.tiktok.com/@shadow.apex_systems?lang=de-DE" target="_blank" class="social-button tiktok">
-                      <i class="fab fa-tiktok"></i> TikTok Profil
-                  </a>
-              </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Apex Systems. Alle Rechte vorbehalten.</p>
-            <p>
-                <a href="#top">Nach oben</a>
-            </p>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Ihr Server Name | Alle Rechte vorbehalten.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
 
