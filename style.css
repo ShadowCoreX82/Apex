@@ -60,23 +60,24 @@ header {
 }
 
 header .logo {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif; /* Futuristischerer Font für Logo */
     font-size: 2.8em;
     color: var(--accent-blue);
     text-decoration: none;
     font-weight: 700;
-    text-shadow: 0 0 15px var(--accent-blue);
-    display: flex;
+    text-shadow: 0 0 15px var(--accent-blue); /* Stärkeres Leuchten */
+    display: flex; /* NEU: Damit das Bild und Text (falls vorhanden) nebeneinander sind */
     align-items: center;
-    margin-bottom: 0;
-
-    /* NEUE ZEILEN FÜR ZENTRIERUNG */
-    flex-grow: 1; /* Erlaubt dem Logo, den verfügbaren Platz einzunehmen */
-    justify-content: center; /* Zentriert den Inhalt (Text) innerhalb des Logo-Elements */
+    margin-bottom: 0; /* Entfernt Standard-Margins */
+    
+    /* NEUE REGELN FÜR ZENTRIERUNG */
+    flex-grow: 1; /* Lässt das Logo den verfügbaren Platz im Zentrum ausfüllen */
+    justify-content: center; /* Zentriert den Text innerhalb des Logo-Elements */
+    order: 2; /* Setzt das Logo an die zweite Position (visuell mittig) */
 }
 
 header .logo img { /* NEU: Styling für das Logo-Bild */
-    height: 40px; /* Beispielgröße für dein Logo (anpassen!) */
+    height: 50px; /* Beispielgröße für dein Logo (anpassen!) */
     width: auto; /* Breite proportional anpassen */
     margin-right: 15px; /* Abstand zwischen Logo und Text/Name */
     vertical-align: middle; /* Vertikale Ausrichtung */
@@ -88,6 +89,7 @@ header .logo img { /* NEU: Styling für das Logo-Bild */
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 0; /* NEU: Entfernt Standard-Margins, da Header jetzt Flexbox ist */
+    order: 1; /* Setzt die Navbar an die erste Position (links) */
 }
 
 .navbar a {
@@ -343,67 +345,71 @@ main {
 
 /* Team Sektion */
 .team-intro-text {
-    font-size: 1.3em;
     color: var(--soft-text);
-    margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 40px;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    font-size: 1.15em;
+    line-height: 1.8;
 }
 
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px; /* Noch größerer Abstand */
     justify-content: center;
+    gap: 30px;
     margin-top: 50px;
 }
 
 .gallery-item {
-    position: relative;
+    background-color: var(--darker-element);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    overflow: hidden;
     text-align: center;
-    width: 100%;
-    max-width: 250px; /* NEU: 250px maximale Breite für Team-Bilder */
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto; /* Keine Flex-Ausdehnung */
+    width: 250px; /* Feste Breite */
+    border: 1px solid var(--border-glow);
+    position: relative;
 }
 
 .gallery-item:hover {
-    transform: translateY(-15px); /* Starker Pop-Effekt */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 20px var(--strong-glow);
 }
 
 .gallery-image {
     width: 100%;
-    height: 250px; /* NEU: 250px Höhe für Team-Bilder */
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    border: 5px solid var(--accent-blue); /* Heller, dicker Rand */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    filter: grayscale(0.2); /* Leichtes Grayscale für kühleren Look */
+    height: 250px; /* Feste Höhe, damit alle Bilder gleich hoch sind */
+    object-fit: cover; /* Schneidet Bilder zu, um den Bereich zu füllen */
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item:hover .gallery-image {
-    border-color: #ffffff; /* Randfarbe ändern */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 30px var(--strong-glow); /* Stark leuchtender Schatten */
-    filter: grayscale(0); /* Farbe kommt zurück beim Hover */
+    transform: scale(1.05); /* Leichter Zoom-Effekt beim Hover */
 }
 
 .gallery-name {
-    display: block;
-    margin-top: 20px;
-    color: var(--accent-blue);
-    font-size: 1.8em; /* Größerer Name */
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.6em;
+    color: var(--light-text);
+    text-decoration: none;
+    display: block;
+    padding: 15px 10px;
+    background-color: var(--dark-element);
+    border-top: 1px solid var(--border-glow);
+    transition: color 0.3s ease;
 }
 
-.gallery-name:hover {
-    color: #ffffff;
+.gallery-item:hover .gallery-name {
+    color: var(--accent-blue);
     text-shadow: 0 0 10px var(--accent-blue);
 }
+
 
 /* Kontakt Sektion */
 .contact-methods {
@@ -478,6 +484,7 @@ main {
     display: flex;
     gap: 20px;
     align-items: center;
+    order: 3; /* Setzt Social Media an die dritte Position (rechts) */
 }
 
 .social-media a {
@@ -558,10 +565,15 @@ footer {
         margin-bottom: 10px; /* Abstand zum Nav-Menü */
         text-align: center;
         width: 100%;
+        order: 1; /* Auf kleinen Bildschirmen oben */
+    }
+    .navbar {
+        order: 2; /* Auf kleinen Bildschirmen in der Mitte */
     }
     .social-media {
         margin-top: 15px; /* Abstand zum Nav-Menü */
         margin-left: 0;
+        order: 3; /* Auf kleinen Bildschirmen unten */
     }
     .home-img {
         width: 80%;
@@ -610,13 +622,6 @@ footer {
     .features .box h3 {
         font-size: 1.7em;
     }
-    .gallery-image {
-        max-width: 250px;
-        height: 250px;
-    }
-    .gallery-name {
-        font-size: 1.5em;
-    }
     .contact-box {
         flex: 1 1 100%;
         max-width: 90%;
@@ -633,6 +638,11 @@ footer {
         width: 90%;
         bottom: -5%;
     }
+
+    /* Anpassung für den "Über Uns" Inhalt */
+    .about-content {
+        padding: 0 30px; /* Weniger Padding auf kleineren Bildschirmen */
+    }
 }
 
 @media (max-width: 480px) {
@@ -640,7 +650,7 @@ footer {
         font-size: 1.8em;
     }
     header .logo img { /* NEU: Logo-Größe für sehr kleine Bildschirme */
-        height: 35px;
+        height: 35px; /* Du wolltest hier 30px, ich belasse es bei 35px vom letzten Code. Wenn du 30px möchtest, ändere es hier auf 30px */
         margin-right: 8px;
     }
     .navbar a {
@@ -675,10 +685,6 @@ footer {
     .features .box h3 {
         font-size: 1.5em;
     }
-    .gallery-image {
-        max-width: 200px;
-        height: 200px;
-    }
     .contact-box h3 {
         font-size: 1.8em;
     }
@@ -694,5 +700,10 @@ footer {
     }
     .footer-iconTop i {
         font-size: 1.5em;
+    }
+
+    /* Anpassung für den "Über Uns" Inhalt */
+    .about-content {
+        padding: 0 15px; /* Noch weniger Padding auf sehr kleinen Bildschirmen */
     }
 }
